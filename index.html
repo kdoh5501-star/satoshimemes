@@ -75,9 +75,9 @@ nav{position:fixed;inset:0 0 auto;z-index:50;backdrop-filter:blur(14px);backgrou
 @keyframes fall{from{transform:translateY(-8vh) rotate(0)}to{transform:translateY(108vh) rotate(360deg)}}
 
 /* MARQUEE */
-.marquee{background:var(--parchment);padding:22px 0;border-block:3px solid var(--gold-deep);overflow:hidden}
+.marquee{background:#ffffff;padding:22px 0;border-block:3px solid var(--gold-deep);overflow:hidden}
 .marquee-track{display:flex;gap:64px;align-items:center;width:max-content;animation:scroll 32s linear infinite}
-.marquee-track img{height:30px;width:auto;filter:grayscale(1);opacity:.85;mix-blend-mode:multiply}
+.marquee-track img{height:30px;width:auto;filter:grayscale(1);opacity:.85}
 @keyframes scroll{to{transform:translateX(-50%)}}
 
 /* STATS */
@@ -396,4 +396,4 @@ try{
       if(el.getBoundingClientRect().top>window.innerHeight){el.classList.add('pre');io.observe(el)}
     });
     // safety net: reveal everything after 4s no matter what
-    setTimeout(()=>document.querySelectorAll('.reveal.pre').forE
+    setTimeout(()=>document.querySelectorAll('.reveal.pre').forEach(el=>el.classList.remove('pre'
